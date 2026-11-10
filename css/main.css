@@ -28,6 +28,7 @@ img { height: auto; }
 a { color: inherit; }
 button, input, select, textarea { font: inherit; color: inherit; }
 .envoltura { width: min(100% - 2 * var(--gut), var(--max)); margin-inline: auto; }
+.nw { white-space: nowrap; }
 .sr { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 .saltar { position: absolute; left: 12px; top: -60px; z-index: 99; background: var(--am); color: var(--tinta); padding: 10px 14px; font-weight: 700; }
 .saltar:focus { top: 12px; }
@@ -328,6 +329,72 @@ figure { margin: 0; }
   .capa { min-height: 66svh; align-items: flex-start; padding: 36px 0 28px; }
   .capa__in { opacity: .45; }
   .capa__n { font-size: 26px; }
+}
+
+/* ── Móvil con aire (pedido el 10-nov): márgenes laterales generosos, más separación entre secciones y bloques ── */
+@media (max-width: 760px) {
+  :root { --gut: clamp(24px, 7vw, 30px); }
+  body { font-size: 17px; line-height: 1.65; }
+  .eti { margin-bottom: 20px; }
+  .h2 { margin-bottom: 26px; line-height: 1.02; }
+  .portada__txt { padding-bottom: 108px; }
+  .portada__lugar { margin-bottom: 22px; line-height: 1.5; }
+  .portada__sub { margin: 24px 0 30px; }
+  .portada__acc { gap: 12px; }
+  .nota-g { margin-top: 26px; }
+  .portada__real { bottom: 72px; }
+  .portada__velo { background: linear-gradient(rgba(18, 32, 26, .55), rgba(18, 32, 26, 0) 140px), linear-gradient(to top, rgba(18, 32, 26, .97) 0%, rgba(18, 32, 26, .9) 44%, rgba(18, 32, 26, .55) 62%, rgba(18, 32, 26, .12) 80%, rgba(18, 32, 26, 0) 90%); }
+  .corte { padding: 104px 0 56px; }
+  .corte__cab { margin-bottom: 32px; }
+  .corte__intro { font-size: 17px; }
+  .corte__lamina { padding-top: 10px; }
+  .capa { padding: 52px 0 44px; }
+  .capa__cota { margin-bottom: 16px; }
+  .capa__t { margin-bottom: 16px; }
+  .capa__p { margin-bottom: 24px; }
+  .chips { gap: 10px; margin-bottom: 28px; }
+  .chips li { padding: 9px 12px 8px; }
+  .capa__fotos { gap: 12px; }
+  .flota, .viajes, .opiniones, .zona, .contacto { padding: 104px 0; }
+  .flota__grid { gap: 56px; }
+  .flota__intro, .viajes__txt > p, .zona__txt > p, .contacto__txt > p { font-size: 17px; margin-bottom: 32px; }
+  .flota__lista li { gap: 14px; padding: 24px 0 24px 14px; }
+  .flota__lista p { font-size: 16px; line-height: 1.6; }
+  .viajes__grid { gap: 44px; }
+  .calc__medidas { grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 26px; }
+  .calc__medidas label:last-child { grid-column: 1 / -1; }
+  .calc__medidas label { padding: 14px 16px 12px; }
+  .calc__medidas span { font-size: 11px; letter-spacing: .12em; margin-bottom: 10px; }
+  .calc__medidas input { font-size: 32px; }
+  .calc__mat { gap: 10px; }
+  .calc__mat legend { margin-bottom: 12px; }
+  .viajes__res { padding: 30px 24px 26px; }
+  .viajes__cifras { gap: 24px 20px; margin-bottom: 26px; }
+  .viajes__total { padding-top: 22px; }
+  .viajes__flota { margin-bottom: 24px; }
+  .viajes__nota { margin-bottom: 26px; }
+  .opiniones__grid { gap: 48px; }
+  .opi { padding: 32px 0; }
+  .opi__q { margin-bottom: 18px; }
+  .opi__x { margin-top: 14px; }
+  .opiniones__mas { gap: 14px 26px; padding-top: 28px; }
+  .zona__grid { gap: 52px; }
+  .zona__pueblos { gap: 8px; margin-bottom: 32px; }
+  .zona__datos { gap: 18px; margin-bottom: 32px; }
+  .zona__acc { gap: 12px; }
+  .zona__acc .btn { flex: 1 1 100%; }
+  .contacto__grid { gap: 48px; }
+  .contacto__tel { margin: 30px 0 12px; font-size: clamp(36px, 11.4vw, 54px); }
+  .form { padding: 28px 22px; gap: 20px; }
+  .form label { gap: 9px; }
+  .form__nota { margin-top: -4px; }
+  .pie { padding: 80px 0 44px; }
+  .pie__fila { gap: 16px; margin-top: 40px; padding-top: 26px; }
+}
+/* Pantallas muy estrechas: el botón de llamar de la cabecera se queda en el icono (la barra inferior ya dice «Llamar») */
+@media (max-width: 359px) {
+  .cab__tel { width: 44px; padding: 0; }
+  .cab__tel span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
 }
 
 @media (prefers-reduced-motion: reduce) {
